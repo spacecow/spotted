@@ -1,0 +1,1 @@
+/Users/johan/ruby/rails/spec/support/user.rb

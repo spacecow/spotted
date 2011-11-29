@@ -1,0 +1,10 @@
+en:
+  alerts:
+    invalid_email_or_password: "Invalid email or password."
+  formtastic:
+    label:
+      confirmation: "Confirmation"
+  notices:
+    logged_in: "Logged in."
+    logged_out: "Logged out."
+    signed_up: "Signed up."
