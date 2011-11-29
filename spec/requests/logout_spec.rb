@@ -1,1 +1,1 @@
-/Users/johan/ruby/rails/spec/request/logout_spec.rb
+../../../spec/request/logout_spec.rb

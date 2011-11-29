@@ -5,6 +5,8 @@ gem 'mysql2'
 gem 'jquery-rails'
 gem 'formtastic'
 gem 'bcrypt-ruby', :require => 'bcrypt'
+gem 'execjs'
+gem 'therubyracer'
 
 group :assets do
   gem 'sass-rails', "  ~> 3.1.0"
