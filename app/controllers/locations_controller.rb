@@ -9,6 +9,8 @@ class LocationsController < ApplicationController
     @location = @user.locations.new(params[:location])
     if @location.save
       redirect_to @user 
+    else
+      render :new
     end
   end
 end

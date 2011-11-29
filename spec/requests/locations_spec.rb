@@ -7,8 +7,25 @@ describe "Locations" do
     end
 
     context "errors" do
-      it "latitude cannot be empty"
-      it "longitude cannot be empty"
+      before(:each) do
+        visit new_user_location_path(@user)
+      end
+
+      it "latitude cannot be empty" do
+        lambda do
+          fill_in "Latitude", :with => ""
+          click_button "Create Location" 
+        end.should change(Location, :count).by(0)
+        li(:latitude).should have_error("can't be blank")
+      end
+
+      it "longitude cannot be empty" do
+        lambda do
+          fill_in "Longitude", :with => ""
+          click_button "Create Location"
+        end.should change(Location, :count).by(0)
+        li(:longitude).should have_error("can't be blank")
+      end
     end
 
     context "create a new location" do
