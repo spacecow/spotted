@@ -1,1 +1,1 @@
-/Users/johan/ruby/rails/spec/support/session.rb
+../../../spec/support/session.rb

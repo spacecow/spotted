@@ -1,1 +1,1 @@
-/Users/johan/ruby/rails/spec/support/layout.rb
+../../../spec/support/layout.rb
