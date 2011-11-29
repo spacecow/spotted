@@ -26,4 +26,5 @@ group :test do
   gem 'factory_girl'
   gem 'capybara'
   gem 'launchy'
+  gem 'libnotify'
 end

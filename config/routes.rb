@@ -1,10 +1,12 @@
 Spotted::Application.routes.draw do
+  root :to => 'users#index'
+  resources :users, :only => [:show,:index,:new,:create] do
+    resources :locations, :only => [:new,:create]
+  end
+
   get "signup" => "users#new"
-  resources :users, :only => [:index,:new,:create]
 
   get "login" => "sessions#new"
   get "logout" => "sessions#destroy"
   resources :sessions, :only => [:new,:create]
-
-  root :to => 'users#index'
 end
