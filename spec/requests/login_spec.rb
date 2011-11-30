@@ -1,1 +1,1 @@
-../../../../../basiq/spec/request/login_spec.rb
+/home/johan/apps/basiq/spec/request/login_spec.rb
