@@ -1,1 +1,1 @@
-../../../basiq/app/helper/basic_authentication.rb
+../../../../basiq/app/helper/basic_authentication.rb
