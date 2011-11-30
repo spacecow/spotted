@@ -1,1 +1,1 @@
-/home/johan/apps/basiq/spec/support/session.rb
+../../../../../basiq/spec/support/session.rb
