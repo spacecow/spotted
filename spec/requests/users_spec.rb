@@ -1,10 +1,17 @@
 require 'spec_helper'
 
 describe "Users" do
-  describe "index" do
-    it "works! (now write some real specs)" do
-      get users_path
-      response.status.should be(200)
+  describe "current" do
+    it "no user logged in" do
+      visit current_users_path
+      page.should have_content("no user")
+    end
+
+    it "display user if logged in" do
+      Factory(:user)
+      login
+      visit current_users_path
+      page.should have_content("test@example.com")
     end
   end
 end
