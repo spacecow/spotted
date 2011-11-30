@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  before_filter :basic_authentication, :only => :iphone
+
   def new
   end
 
@@ -16,5 +18,11 @@ class SessionsController < ApplicationController
   def destroy
     session[:userid] = nil
     redirect_to root_path, :notice => notify(:logged_out) 
+  end
+
+  def iphone
+    if @user
+      redirect_to root_path
+    end
   end
 end

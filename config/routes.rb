@@ -8,5 +8,10 @@ Spotted::Application.routes.draw do
 
   get "login" => "sessions#new"
   get "logout" => "sessions#destroy"
-  resources :sessions, :only => [:new,:create]
+  get "iphone" => "sessions#iphone"
+  resources :sessions, :only => [:new,:create] do
+    collection do
+      get :iphone
+    end
+  end
 end

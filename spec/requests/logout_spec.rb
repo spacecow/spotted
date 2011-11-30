@@ -1,1 +1,1 @@
-../../../spec/request/logout_spec.rb
+../../../basiq/spec/request/logout_spec.rb

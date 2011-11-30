@@ -1,1 +1,1 @@
-../../../spec/support/layout.rb
+../../../basiq/spec/support/layout.rb

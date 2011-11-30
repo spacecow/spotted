@@ -1,1 +1,1 @@
-../../../spec/support/user.rb
+../../../basiq/spec/support/user.rb

@@ -181,6 +181,3 @@ DEPENDENCIES
   spork (> 0.9.0.rc)
   therubyracer
   uglifier
-
-METADATA
-  version: 1.0.6
