@@ -7,6 +7,7 @@ gem 'formtastic'
 gem 'bcrypt-ruby', :require => 'bcrypt'
 gem 'execjs'
 gem 'therubyracer'
+gem 'cancan'
 
 group :assets do
   gem 'sass-rails', "  ~> 3.1.0"

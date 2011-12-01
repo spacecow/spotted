@@ -1,5 +1,7 @@
 Spotted::Application.routes.draw do
   root :to => 'users#index'
+  get 'welcome' => 'users#index'
+
   resources :users, :only => [:show,:index,:new,:create] do
     resources :locations, :only => [:new,:create]
     collection do
