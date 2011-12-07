@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_filter :basic_authentication, :only => :current
   load_and_authorize_resource
 
   def show
@@ -21,7 +22,7 @@ class UsersController < ApplicationController
   end
 
   def current
-    @user = current_user
+    @user = current_user if @user.nil?
     @email = @user.nil? ? "no user" : @user.email
     respond_to do |f|
       f.html

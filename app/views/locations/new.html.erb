@@ -1,5 +1,6 @@
 <%= semantic_form_for [@user,@location] do |f| %>
   <%= f.input :latitude %>
   <%= f.input :longitude %>
+  <%= f.input :horizontal_accuracy, :label => ft(:accuracy) %>
   <%= f.submit %>
 <% end %>

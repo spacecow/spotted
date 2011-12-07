@@ -1,3 +1,5 @@
 --- 
 1202e9: !ruby/object:Dooby::Task 
   todo: iphone login :done
+912d7c: !ruby/object:Dooby::Task 
+  todo: adding horizontal accuracy to locations :done

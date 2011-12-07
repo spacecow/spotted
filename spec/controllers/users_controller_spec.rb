@@ -29,4 +29,17 @@ describe UsersController do
       end
     end
   end
+
+  describe "a user is logged in" do
+    before(:each) do
+      session[:userid] = @model.id
+    end
+
+    controller_actions.each do |action,req|
+      it "should reach the #{action} page" do
+        send("#{req}", "#{action}", :id => @model.id)
+        response.redirect_url.should_not eq(login_url)
+      end
+    end
+  end
 end

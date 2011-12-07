@@ -1,8 +1,11 @@
 en:
+  login: "Login"
+
   alerts:
-    invalid_email_or_password: "Invalid email or password."
+    invalid_login_or_password: "Invalid login or password."
   formtastic:
     label:
+      accuracy: "Accuracy"
       confirmation: "Confirmation"
   notices:
     logged_in: "Logged in."

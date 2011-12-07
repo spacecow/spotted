@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       session_userid(user.id)
       redirect_to root_path, :notice => notify(:logged_in) 
     else
-      flash.now.alert = alert(:invalid_email_or_password) 
+      flash.now.alert = alert(:invalid_login_or_password) 
       render :new
     end
   end
