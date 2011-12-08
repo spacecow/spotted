@@ -1,5 +1,6 @@
 en:
   login: "Login"
+  user: "User"
 
   alerts:
     invalid_login_or_password: "Invalid login or password."

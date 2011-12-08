@@ -23,7 +23,7 @@ class UsersController < ApplicationController
 
   def current
     @user = current_user if @user.nil?
-    @email = @user.nil? ? "no user" : @user.email
+    @name = @user.nil? ? "no user" : @user.name
     respond_to do |f|
       f.html
       f.json {render :json => @user.to_json}

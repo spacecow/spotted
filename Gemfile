@@ -8,6 +8,7 @@ gem 'bcrypt-ruby', :require => 'bcrypt'
 gem 'execjs'
 gem 'therubyracer'
 gem 'cancan'
+gem 'annotate', :git => 'https://github.com/ctran/annotate_models.git' 
 
 group :assets do
   gem 'sass-rails', "  ~> 3.1.0"

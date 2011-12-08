@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/ctran/annotate_models.git
+  revision: a709a87dc08c5c3cee31ece0e698c4cbea400b31
+  specs:
+    annotate (2.4.1.beta1)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -163,6 +169,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  annotate!
   bcrypt-ruby
   cancan
   capybara

@@ -1,15 +1,15 @@
 Spotted::Application.routes.draw do
-  root :to => 'users#index'
-  get 'welcome' => 'users#index'
+  root :to => 'operator#welcome'
+  get 'welcome' => 'operator#welcome'
+  get "operator/welcome"
 
+  get "signup" => "users#new"
   resources :users, :only => [:show,:index,:new,:create] do
     resources :locations, :only => [:new,:create]
     collection do
       get :current
     end
   end
-
-  get "signup" => "users#new"
 
   get "login" => "sessions#new"
   get "logout" => "sessions#destroy"
