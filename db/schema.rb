@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111207082435) do
+ActiveRecord::Schema.define(:version => 20111208082752) do
 
   create_table "locations", :force => true do |t|
     t.decimal  "latitude",            :precision => 10, :scale => 7
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(:version => 20111207082435) do
     t.string   "password_salt"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "roles_mask"
   end
 
 end

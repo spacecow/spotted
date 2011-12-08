@@ -20,7 +20,3 @@ end
 Spork.each_run do
   FactoryGirl.reload
 end
-
-def create_user(name)
-  Factory(:user,:name=>name)
-end

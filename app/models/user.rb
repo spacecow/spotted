@@ -2,11 +2,22 @@ class User < ActiveRecord::Base
   has_many :locations
 
   attr_accessor :password
+  before_create :set_role
   before_save :encrypt_password
 
   validates_presence_of :password, :email
   validates_confirmation_of :password, :on => :create
   validates_uniqueness_of :email
+
+  ROLES = %w(god admin miniadmin member)
+
+  def role?(role); roles.include?(role.to_s) end
+  def roles=(roles)
+    self.roles_mask = (roles&ROLES).map{|r| 2**ROLES.index(r)}.sum
+  end
+  def roles
+    ROLES.reject{|r| ((roles_mask||0) & 2**ROLES.index(r)).zero?}
+  end
 
   class << self
     def authenticate(name,password)
@@ -17,6 +28,8 @@ class User < ActiveRecord::Base
         nil 
       end
     end
+
+    def role(role); 2**ROLES.index(role.to_s) end
   end
 
   private
@@ -27,6 +40,8 @@ class User < ActiveRecord::Base
         self.password_hash = BCrypt::Engine.hash_secret(password, password_salt)
       end
     end
+
+    def set_role; self.roles = %w(member) if self.roles.empty? end
 end
 # == Schema Information
 #

@@ -3,10 +3,12 @@ class Ability
 
   def initialize(user)
     if user
-      can [:index], User
-      can [:destroy,:current], User, :id => user.id
+      can :current, User, :id => user.id
+      if user.role? :admin
+        can [:index,:current], User
+      end
     else
-      can [:create,:destroy], User 
+      can :create, User 
     end
   end
 end
