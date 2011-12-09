@@ -37,12 +37,12 @@ describe UsersController do
     end
 
     controller_actions.each do |action,req|
-      if %w().include?(action) 
+      if %w(current).include?(action) 
         it "should reach the #{action} page" do
           send(req,action,:id => @model.id)
           response.redirect_url.should_not eq(welcome_url)
         end
-      elsif %w(destroy current).include?(action) 
+      elsif %w(show).include?(action) 
         it "should reach the own #{action} page" do
           send(req,action,:id => @user.id)
           response.redirect_url.should_not eq(welcome_url)
@@ -62,11 +62,31 @@ describe UsersController do
 
   describe "an admin is logged in" do
     before(:each) do
+      session[:userid] = create_miniadmin.id
+    end
+
+    controller_actions.each do |action,req|
+      if %w(index current show).include?(action) 
+        it "should reach the #{action} page" do
+          send(req,action,:id => @model.id)
+          response.redirect_url.should_not eq(welcome_url)
+        end
+      else
+        it "should not reach the #{action} page" do
+          send(req,action,:id => @model.id)
+          response.redirect_url.should eq(welcome_url)
+        end
+      end
+    end
+  end
+
+  describe "an admin is logged in" do
+    before(:each) do
       session[:userid] = create_admin.id
     end
 
     controller_actions.each do |action,req|
-      if %w(index destroy current).include?(action) 
+      if %w(index destroy current show).include?(action) 
         it "should reach the #{action} page" do
           send(req,action,:id => @model.id)
           response.redirect_url.should_not eq(welcome_url)

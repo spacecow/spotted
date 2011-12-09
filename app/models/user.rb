@@ -1,16 +1,17 @@
 class User < ActiveRecord::Base
   has_many :locations
 
-  attr_accessor :password
+  attr_accessor :password, :login
   before_create :set_role
   before_save :encrypt_password
 
-  validates_presence_of :password, :email
+  validates_presence_of :password, :name
   validates_confirmation_of :password, :on => :create
-  validates_uniqueness_of :email
+  validates_uniqueness_of :name
 
   ROLES = %w(god admin miniadmin member)
 
+  def login=(s); self[:name]=s end
   def role?(role); roles.include?(role.to_s) end
   def roles=(roles)
     self.roles_mask = (roles&ROLES).map{|r| 2**ROLES.index(r)}.sum

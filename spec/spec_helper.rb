@@ -20,3 +20,11 @@ end
 Spork.each_run do
   FactoryGirl.reload
 end
+
+def create_user(name="")
+  if name.blank?
+    create_user_with_hash
+  else
+    create_user_with_hash({:name => name})
+  end
+end

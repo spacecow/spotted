@@ -8,7 +8,12 @@ en:
     label:
       accuracy: "Accuracy"
       confirmation: "Confirmation"
+      login: "Login"
+  messages:
+    sure?: "Are you sure?"
   notices:
     logged_in: "Logged in."
     logged_out: "Logged out."
     signed_up: "Signed up."
+  successes:
+    deleted: "Successfully deleted %{o}."

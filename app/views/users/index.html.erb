@@ -3,7 +3,16 @@
 <table>
 <% @users.each do |user| %>
   <tr>
-    <td><%= user.name %></td>
+    <td>
+      <% if can? :show, user %>
+        <%= link_to user.name, user_path(user) %>
+      <% else %>
+        <%= user.name %>
+      <% end %>
+    </td>
+    <% if can? :destroy, user %>
+      <td><%= link_to t(:del), user, :method => :delete, :confirm => sure? %></td>
+    <% end %>
   </tr>
 <% end %>
 </table>

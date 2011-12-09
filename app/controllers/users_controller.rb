@@ -5,20 +5,26 @@ class UsersController < ApplicationController
   def show
   end
 
+  def index
+  end
+
   def new
-    @user = User.new
   end
 
   def create
-    @user = User.new(params[:user])
     if @user.save
       redirect_to root_path, :notice => notify(:signed_up)
     else
+      @user.errors_on(:name).each do |error|
+        @user.errors.add(:login,error)
+      end
       render :new
     end
   end
 
-  def index
+  def destroy
+    @user.destroy
+    redirect_to users_path, :notice => deleted(:user)
   end
 
   def current

@@ -4,7 +4,7 @@ Spotted::Application.routes.draw do
   get "operator/welcome"
 
   get "signup" => "users#new"
-  resources :users, :only => [:show,:index,:new,:create] do
+  resources :users, :only => [:show,:index,:new,:create,:destroy] do
     resources :locations, :only => [:new,:create]
     collection do
       get :current

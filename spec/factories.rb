@@ -1,4 +1,4 @@
 Factory.define :user do |f|
-  f.sequence(:email){|n| "test#{n}@example.com" }
+  f.sequence(:name){|n| "test#{n}" }
   f.password "secret"
 end
